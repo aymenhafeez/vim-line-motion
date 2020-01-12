@@ -21,6 +21,6 @@ place of the current line.
 Can be installed with Vim's built-in plugin support:  
 
     mkdir -p ~/.vim/pack/plugins/start
-    cd ~/.vim/pack/plugin/start
-    git clone https://github.com/aymenhafeez/vim-line-flow
+    cd ~/.vim/pack/plugins/start
+    git clone https://github.com/aymenhafeez/vim-line-motion
 
