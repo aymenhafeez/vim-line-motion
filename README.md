@@ -1,6 +1,6 @@
 # vim-line-motion
 
-This essentially a very simple, work-in-progress script of functions, which allow
+This is essentially a very simple, work-in-progress script of functions, which allow
 the user to perform line-wise operations to move, delete, yank and paste lines.
 The idea originated from <a href="https://www.youtube.com/watch?v=lwD8G1P52Sk">Chris Toomey's
 talk</a> on writing Vim plugins and grew from there.
@@ -19,6 +19,7 @@ place of the current line.
 ## Installation
 
 Can be installed with Vim's built-in plugin support:  
+
     mkdir -p ~/.vim/pack/plugins/start
     cd ~/.vim/pack/plugin/start
     git clone https://github.com/aymenhafeez/vim-line-flow
