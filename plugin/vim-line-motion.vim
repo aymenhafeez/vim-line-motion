@@ -7,7 +7,7 @@
 " VERY MUCH A WORK IN PROGRESS
 " TODO:
 "   * Merge some of the functions
-"   * Get range over # of lines in current file rather than 0 - 1000
+"   * Get range over # of lines in current file rather than 0 - 50
 "   * Allow easy remapping of defaults
 
 if exists("g:loaded_line_motion") || &compatible || v:version < 700
@@ -48,7 +48,7 @@ function! YankAndPasteLineN(line_number)
     execute 'normal!  V"zp'
 endfunction
 
-for position in range(1, 1000)
+for position in range(1, 50)
     execute 'nnoremap <Leader>dl' . position . ' : call DeleteLine(' . position . ')<CR>'
 
     execute 'nnoremap <Leader>k' . position . ' :call MoveLineUp(' . position . ')<CR>'
