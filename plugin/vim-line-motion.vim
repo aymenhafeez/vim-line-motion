@@ -1,8 +1,8 @@
 " vim-line-motion - a bunch of functions for performing line-wise operations
 " Author:	Aymen Hafeez <aymennh@gmail.com>
-" Version:	0.0.1
+" Version:	0.1
 " License:	MIT License
-" Source:	https://github.com/aymenhafeez/plugin/vim-line-motion.vim
+" Location:	https://github.com/aymenhafeez/vim-line-motion/
 
 " VERY MUCH A WORK IN PROGRESS
 " TODO:
