@@ -55,7 +55,7 @@ function! YankAndPasteLine(line_number) abort
     execute 'normal!  V"zp'
 endfunction
 
-function! ReplaceLineUp(postion) abort
+function! ReplaceLineUp(position) abort
     let replace_line = a:position
     execute 'normal! dd' . replace_line . 'kVp'
 endfunction
