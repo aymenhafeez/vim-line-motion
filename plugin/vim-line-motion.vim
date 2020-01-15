@@ -1,6 +1,6 @@
 " vim-line-motion - a bunch of functions for performing line-wise operations
 " Author:	Aymen Hafeez <aymennh@gmail.com>
-" Version:	0.2
+" Version:	0.3.0
 " License:	MIT License
 " Location:	https://github.com/aymenhafeez/vim-line-motion/
 
@@ -55,14 +55,33 @@ function! YankAndPasteLine(line_number) abort
     execute 'normal!  V"zp'
 endfunction
 
+" Replace the line n lines up with the current line
 function! ReplaceLineUp(position) abort
     let replace_line = a:position
     execute 'normal! dd' . replace_line . 'kVp'
 endfunction
 
+" Replace the line n lines down with the current line
 function! ReplaceLineDown(position) abort
     let replace_line = a:position
     execute 'normal! dd' . replace_line . 'jkVp'
+endfunction
+
+" Swap current line with line n lines up/down
+function! SwapLineUp(line_number) abort
+    let cursor_position = getpos('.')
+    let swap_line = a:line_number
+    execute 'normal! dd' . swap_line . 'kVp'
+    call setpos('.', cursor_position)
+    execute 'normal!  P'
+endfunction
+
+function! SwapLineDown(line_number) abort
+    let cursor_position = getpos('.')
+    let swap_line = a:line_number
+    execute 'normal! dd' . swap_line . 'jkVp'
+    call setpos('.', cursor_position)
+    execute 'normal!  P'
 endfunction
 
 for position in range(1, 35)
@@ -75,4 +94,6 @@ for position in range(1, 35)
     execute 'nnoremap <Leader>rj' . position . ' :call ReplaceLineDown(' . position . ')<CR>'
     execute 'nnoremap <Leader>mk' . position . ' :m-' . position . '<CR>'
     execute 'nnoremap <Leader>mj' . position . ' :m+' . position . '<CR>'
+    execute 'nnoremap <Leader>sk' . position . ' :call SwapLineUp(' . position . ')<CR>'
+    execute 'nnoremap <Leader>sj' . position . ' :call SwapLineDown(' . position . ')<CR>'
 endfor
