@@ -1,13 +1,13 @@
 " vim-line-motion - a bunch of functions for performing line-wise operations
 " Author:	Aymen Hafeez <aymennh@gmail.com>
-" Version:	0.3.0
+" Version:	0.4.0
 " License:	MIT License
 " Location:	https://github.com/aymenhafeez/vim-line-motion/
 
 " VERY MUCH A WORK IN PROGRESS
 " TODO:
-"   * Merge some of the functions
-"   * Get range over # of lines in current file rather than 0 - 1000
+"   * Different way of taking numbered input for mappings ---> slows down
+"     startup
 "   * Allow easy remapping of defaults
 
 if exists("g:loaded_line_motion") || &compatible || v:version < 700
@@ -46,15 +46,6 @@ function! MoveLineDown(position) abort
     call setpos('.', cursor_position)
 endfunction
 
-" Yanks the nth line and pastes it at the current cursor position
-function! YankAndPasteLine(line_number) abort
-    let cursor_position = getpos('.')
-    let yank_line = a:line_number
-    execute 'normal! ' . yank_line . 'G"zyy'
-    call setpos('.', cursor_position)
-    execute 'normal!  V"zp'
-endfunction
-
 " Replace the line n lines up with the current line
 function! ReplaceLineUp(position) abort
     let replace_line = a:position
@@ -65,6 +56,24 @@ endfunction
 function! ReplaceLineDown(position) abort
     let replace_line = a:position
     execute 'normal! dd' . replace_line . 'jkVp'
+endfunction
+
+" Replace current line with line n lines above
+function! ReplaceCurrentLineUp(position) abort
+    let cursor_position = getpos('.')
+    let replace_line = a:position
+    execute 'normal! ' . replace_line . 'kyy'
+    call setpos('.', cursor_position)
+    execute 'normal!  Vp'
+endfunction
+
+" Replace current line with line n lines above
+function! ReplaceCurrentLineDown(position) abort
+    let cursor_position = getpos('.')
+    let replace_line = a:position
+    execute 'normal! ' . replace_line . 'jyy'
+    call setpos('.', cursor_position)
+    execute 'normal!  Vp'
 endfunction
 
 " Swap current line with line n lines up/down
@@ -89,7 +98,8 @@ for position in range(1, 35)
     execute 'nnoremap <Leader>dj' . position . ' :call DeleteLineDown(' . position . ')<CR>'
     execute 'nnoremap <Leader>k' . position . ' :call MoveLineUp(' . position . ')<CR>'
     execute 'nnoremap <Leader>j' . position . ' :call MoveLineDown(' . position . ')<CR>'
-    execute 'nnoremap <Leader>pl' . position . ' :call YankAndPasteLine(' . position . ')<CR>'
+    execute 'nnoremap <Leader>pk' . position . ' :call ReplaceCurrentLineUp(' . position . ')<CR>'
+    execute 'nnoremap <Leader>pj' . position . ' :call ReplaceCurrentLineDown(' . position . ')<CR>'
     execute 'nnoremap <Leader>rk' . position . ' :call ReplaceLineUp(' . position . ')<CR>'
     execute 'nnoremap <Leader>rj' . position . ' :call ReplaceLineDown(' . position . ')<CR>'
     execute 'nnoremap <Leader>mk' . position . ' :m-' . position . '<CR>'
