@@ -7,7 +7,8 @@ on writing Vim plugins and grew from there.
 
 ## Installation
 
-Install with your package manager of choice, or using Vim 8's native package manager:
+Install with your package manager of choice, or using Vim 8's native plugin
+support:
 
 ```sh
 mkdir -p ~/.vim/pack/plugins/start

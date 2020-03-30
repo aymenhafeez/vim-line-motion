@@ -1,0 +1,57 @@
+*vim-line-motion.txt*	For Vim version 7.3	    Last change: 30 March 2020
+
+Author:	 Aymen Hafeez <aymennh@gmail.com>
+Version: 0.4.1
+License: MIT License
+Source:	 https://github.com/aymenhafeez/vim-line-motion/
+------------------------------------------------------------------------------
+
+
+  Vim-line-motion provides a collection of mappings for performing linewise
+                                 operations.
+
+
+MAPPINGS 
+
+                                                *motion-move-line*
+<Leader>k[count]        Move the current line [count] lines UP; cursor stays
+                        in place.
+
+<Leader>j[count]        Move the current line [count] lines DOWN; cursor stays
+                        in place.
+
+<Leader>mk[count]       Move the current line [count] lines UP; cursor moves
+                        with line.
+
+<Leader>mj[count]       Move the current line [count] lines DOWN; cursor;
+                        cursor moves with line.
+
+                                               *motion-delete-line*
+<Leader>dk[count]       Delete the line [count] lines ABOVE the current
+                        position.
+
+<Leader>dj[count]       Delete the line [count] lines BELOW the current
+                        position.
+
+                                               *motion-replace-line*
+<Leader>rk[count]       Replace the line [count] lines ABOVE with the current
+                        line.
+
+<Leader>rj[count]       Replace the line [count] lines BELOW with the current
+                        line.
+
+                                               *motion-paste-line*
+<Leader>pk[count]       Paste the line [count] lines ABOVE in place of the
+                        current line.
+
+<Leader>pj[count]       Paste the line [count] lines BELOW in place of the
+                        current line.
+
+                                               *motion-swap-line*
+<Leader>sk[count]       Swap the current line and the line [count] ABOVE.
+
+<Leader>sj[count]       Swap the current line and the line [count] BELOW.
+
+
+
+ vim:tw=78:et:ft=help:norl:
