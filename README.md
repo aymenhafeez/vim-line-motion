@@ -16,21 +16,21 @@ git clone https://github.com/aymenhafeez/vim-line-motion
 ```
 
 ## Commands:
-* `<Leader>k + n` - move the current line 'n' lines up while maintaining
+* `<Leader>k[count]` - move the current line `[count]` lines up while maintaining
   the current cursor position.
-* `<Leader>j + n` - move the current line 'n' lines down while maintaining
+* `<Leader>j[count]` - move the current line `[count]` lines down while maintaining
   the current cursor position.
-* `<Leader>dk + n` - delete the line 'n' lines above the current position.
-* `<Leader>dj + n` - delete the line 'n' lines below the current position.
-* `<Leader>mk + n` - move the current line and cursor 'n' lines up.
-* `<Leader>mj + n` - move the current line and cursor 'n' lines down.
-* `<Leader>rk + n` - replace the line 'n' lines above with the current
+* `<Leader>dk[count]` - delete the line `[count]` lines above the current position.
+* `<Leader>dj[count]` - delete the line `[count]` lines below the current position.
+* `<Leader>mk[count]` - move the current line and cursor `[count]` lines up.
+* `<Leader>mj[count]` - move the current line and cursor `[count]` lines down.
+* `<Leader>rk[count]` - replace the line `[count]` lines above with the current
   line.
-* `<Leader>rj + n` - replace the line 'n' lines below with the current
+* `<Leader>rj[count]` - replace the line `[count]` lines below with the current
   line.
-* `<Leader>pk + n` - replace the current line with the line 'n' lines
+* `<Leader>pk[count]` - replace the current line with the line `[count]` lines
 above.
-* `<Leader>pj + n` - replace the current line with the line 'n' lines
+* `<Leader>pj[count]` - replace the current line with the line `[count]` lines
 below.
-* `<Leader>sk + n` - swap the current line and the line 'n' lines above.
-* `<Leader>sj + n` - swap the current line and the line 'n' lines down.
+* `<Leader>sk[count]` - swap the current line and the line `[count]` lines above.
+* `<Leader>sj[count]` - swap the current line and the line `[count]` lines down.
