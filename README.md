@@ -16,6 +16,23 @@ cd ~/.vim/pack/plugins/start
 git clone https://github.com/aymenhafeez/vim-line-motion
 ```
 
+#### Generating help files
+
+If installed with Vim 8's native package management, add the following to your
+vimrc to generate help files for local plugins:
+
+```vim
+" Load all packages in the 'start' directory under each entry in 'packpath'.
+" See :packloadall for more info.
+packloadall
+
+" Generate the help tags file(s) for directory {dir}.
+" When {dir} is ALL then all 'doc' directories in
+" 'runtimepath' will be used.
+" See :h helptags for more info.
+silent! helptags ALL
+```
+
 ## Commands:
 * `<Leader>k[count]` - move the current line `[count]` lines up while maintaining
   the current cursor position.
