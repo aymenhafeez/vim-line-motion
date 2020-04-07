@@ -16,7 +16,7 @@ cd ~/.vim/pack/plugins/start
 git clone https://github.com/aymenhafeez/vim-line-motion
 ```
 
-#### Generating help files
+### Generating help files
 
 If installed with Vim 8's native package management, add the following to your
 vimrc to generate help files for local plugins:
