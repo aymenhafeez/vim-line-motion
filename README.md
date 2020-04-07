@@ -33,7 +33,7 @@ packloadall
 silent! helptags ALL
 ```
 
-## Mappings:
+## Mappings
 * `<Leader>k[count]` - move the current line `[count]` lines up while maintaining
   the current cursor position.
 * `<Leader>j[count]` - move the current line `[count]` lines down while maintaining
