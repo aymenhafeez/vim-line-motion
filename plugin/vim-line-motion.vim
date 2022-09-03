@@ -106,16 +106,16 @@ function! SwapLineDown(line_number) abort
 endfunction
 
 for position in range(1, 35)
-    execute 'nnoremap <Leader>dk' . position . ' :call DeleteLineUp(' . position . ')<CR>'
-    execute 'nnoremap <Leader>dj' . position . ' :call DeleteLineDown(' . position . ')<CR>'
-    execute 'nnoremap <Leader>k' . position . ' :call MoveLineUp(' . position . ')<CR>'
-    execute 'nnoremap <Leader>j' . position . ' :call MoveLineDown(' . position . ')<CR>'
-    execute 'nnoremap <Leader>pk' . position . ' :call ReplaceCurrentLineUp(' . position . ')<CR>'
-    execute 'nnoremap <Leader>pj' . position . ' :call ReplaceCurrentLineDown(' . position . ')<CR>'
-    execute 'nnoremap <Leader>rk' . position . ' :call ReplaceLineUp(' . position . ')<CR>'
-    execute 'nnoremap <Leader>rj' . position . ' :call ReplaceLineDown(' . position . ')<CR>'
-    execute 'nnoremap <Leader>mk' . position . ' :call MoveLineAndCursorUp(' . position . ')<CR>'
-    execute 'nnoremap <Leader>mj' . position . ' :call MoveLineAndCursorDown(' . position . ')<CR>'
-    execute 'nnoremap <Leader>sk' . position . ' :call SwapLineUp(' . position . ')<CR>'
-    execute 'nnoremap <Leader>sj' . position . ' :call SwapLineDown(' . position . ')<CR>'
+    execute position . 'nnoremap <Leader>dk' . ' :call DeleteLineUp(' . position . ')<CR>'
+    execute position . 'nnoremap <Leader>dj' . ' :call DeleteLineDown(' . position . ')<CR>'
+    execute position . 'nnoremap <Leader>k' . ' :call MoveLineUp(' . position . ')<CR>'
+    execute position . 'nnoremap <Leader>j' . ' :call MoveLineDown(' . position . ')<CR>'
+    execute position . 'nnoremap <Leader>pk' . ' :call ReplaceCurrentLineUp(' . position . ')<CR>'
+    execute position . 'nnoremap <Leader>pj' . ' :call ReplaceCurrentLineDown(' . position . ')<CR>'
+    execute position . 'nnoremap <Leader>rk' . ' :call ReplaceLineUp(' . position . ')<CR>'
+    execute position . 'nnoremap <Leader>rj' . ' :call ReplaceLineDown(' . position . ')<CR>'
+    execute position . 'nnoremap <Leader>mk' . ' :call MoveLineAndCursorUp(' . position . ')<CR>'
+    execute position . 'nnoremap <Leader>mj' . ' :call MoveLineAndCursorDown(' . position . ')<CR>'
+    execute position . 'nnoremap <Leader>sk' . ' :call SwapLineUp(' . position . ')<CR>'
+    execute position . 'nnoremap <Leader>sj' . ' :call SwapLineDown(' . position . ')<CR>'
 endfor
